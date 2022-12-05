@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1>{{ mainTitle }}</h1>
+        <input type="text" v-bind:placeholder="myPlaceholder" v-on:input="setInputValue" v-bind:value="inputValue"
+            v-on:keyPress.enter="addNote">
+        <button v-on:click="addNote">add note</button>
+        <hr />
+        <ul>
+            <li v-for="(note, idx) in notes">{{ note }} <button v-on:click="removeNote(idx)">delete</button></li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="App.js"></script>
+</body>
+
+</html>
